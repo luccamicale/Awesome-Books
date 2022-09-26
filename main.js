@@ -1,7 +1,7 @@
-const title = document.getElementById('title');
-const author = document.getElementById('author');
-const addbnt = document.getElementById('add-btn');
-const bookList = document.getElementById('Books-List');
+ const title = document.getElementById('title');
+ const author = document.getElementById('author');
+ const addbnt = document.getElementById('add-btn');
+ const bookList = document.getElementById('Books-List');
 
 
 let book = {
@@ -25,10 +25,46 @@ let book = {
     bookNum.push(books)
   }
   
+addbook("juan", "sa");
+addbook("lucia", "cs");
+addbook("jose", "carla");
+addbook("jose", "carla");
+addbook("jose", "carla");
+
+
+
+let narray = bookNum.filter((data,position,) => {
+
+  if(data.title != "juan"  && data.autor != "sa"){
+  return this
+  }
   
-  addbook("juan ", "sa");
   
-  console.log(bookNum);
+  
+  })
+  console.log(narray)
+
+  addbnt.addEventListener('click' , ()=>{
+
+addbook(title.textContent,author.textContent)
+
+    const li = document.createElement('li');
+const button = document.createElement('button');
+li.className = 'item_1';
+li.innerHTML = "asdas";
+
+
+button.className = 'button_remove';
+button.innerHTML = 'remove';
+ 
+li.appendChild(button);
+
+
+bookList.appendChild(li)
+
+
+
+  })
   
   
   
