@@ -1,9 +1,14 @@
+const title = document.getElementById('title');
+const author = document.getElementById('author');
+const addbnt = document.getElementById('add-btn');
+const bookList = document.getElementById('Books-List');
+
 
 let book = {
     title: this.title,
     autor: this.autor,
     setD: function(title,autor)  {
-    this.title =title;
+    this.title = title;
     this.autor = autor;
   },
     

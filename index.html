@@ -7,19 +7,16 @@
     <title>Awesome Books</title>
 </head>
 <body>
-    <section id="container">
-        <div>
-            <h1 id="title">Awesome Books</h1>
-            <hr id="separator">
-        </div>
-        <div class="add-book">
-            <h2 class="container-title">Add a new Book</h2>
-            <form class="add-form">
-             <input type="text" name="title"  class="form-input title" placeholder="Title">
-              <input type="text" name="author" class="form-input author" placeholder="Author">
-              <button class="submit-button">Add</button>
-            </form>
-        </div>
-    </section>
+    <h1 id="title-main">Awesome Books</h1>
+    <h2 id="sub-title">Book list</h2>
+    <div id="Books-List">
+    </div>
+    <div class="mt-3">
+        <input type="text" id="title" placeholder="Title">
+        <input type="text" id="author" placeholder="Author">
+        <button id="add-btn" type="button">Add</button>
+    </div>
+
+    <script src="main.js"></script>   
 </body>
 </html>
