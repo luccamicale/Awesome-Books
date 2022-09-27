@@ -40,17 +40,14 @@ To get a local copy up and running follow these simple example steps.
 
 ## Authors
 
-👤 **Alexandre Ferreira**
+👤 **Lucca Micale**
+
+- GitHub: [@luccamicale]()
+
+👤 **Jose Romero**
 
 - GitHub: [@]()
 
-👤 **Kelvin Benjamin**
-
-- GitHub: [@]()
-
-👤 **Koami Nogbedjin**
-
-- GitHub: [@]()
 
 
 ## 🤝 Contributing

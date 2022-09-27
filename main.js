@@ -1,71 +1,58 @@
- const title = document.getElementById('title');
- const author = document.getElementById('author');
- const addbnt = document.getElementById('add-btn');
- const bookList = document.getElementById('Books-List');
+const addBook = document.querySelector('#btn-add');
+const bookList = document.querySelector('#book-list');
+const title = document.querySelector('#title');
+const author = document.querySelector('#author');
+const form = document.querySelector('#form');
+const Book = function objBook(title, author) {
+  this.title = title;
+  this.author = author;
+};
 
+const storedBooks = [];
+function addBooks(newBook) {
+  const bookStore = `<div class = "book">
+  <h2> ${newBook.title}</h2> 
+  <h2> ${newBook.author}</h2>
+  <button class="remove" type="button">Remove</button>
+  <hr>
+  </div>`;
+  bookList.innerHTML += bookStore;
+  return bookList.innerHTML;
+}
 
-let book = {
-    title: this.title,
-    autor: this.autor,
-    setD: function(title,autor)  {
-    this.title = title;
-    this.autor = autor;
-  },
-    
-  };
-  
-  const bookNum = [];
-  
-  let addbook = (title, autor)=>{
-  
-    let books = Object.create(book);  
-  
-    books.setD(title,autor)
-    
-    bookNum.push(books)
+// add
+
+addBook.addEventListener('click', (e) => {
+  const newBook = new Book(title.value, author.value);
+  if (title.value === '' || author.value === '') {
+    e.preventDefault();
+  } else {
+    addBooks(newBook);
+    title.value = '';
+    author.value = '';
   }
-  
-addbook("juan", "sa");
-addbook("lucia", "cs");
-addbook("jose", "carla");
-addbook("jose", "carla");
-addbook("jose", "carla");
+});
 
+// local storage
 
+let localForm = { title: '', author: '' };
+if (localStorage.localForm) {
+  localForm = JSON.parse(localStorage.localForm);
+  title.value = localForm.title;
+  author.value = localForm.author;
+} form.addEventListener('input', () => {
+  localStorage.localForm = JSON.stringify(localForm);
+  localForm.title = title.value;
+  localForm.author = author.value;
+});
 
-let narray = bookNum.filter((data,position,) => {
+// remove
 
-  if(data.title != "juan"  && data.autor != "sa"){
-  return this
+bookList.addEventListener('click', (eve) => {
+  if (eve.target.classList.contains('remove')) {
+    const parent = eve.target.parentElement;
+    document.querySelector('.book-list').removeChild(parent);
+    const removeBook = storedBooks.find((item) => item.title === parent.firstChild.innerText);
+    storedBooks.splice(storedBooks.indexOf(removeBook), 1);
   }
-  
-  
-  
-  })
-  console.log(narray)
-
-  addbnt.addEventListener('click' , ()=>{
-
-addbook(title.textContent,author.textContent)
-
-    const li = document.createElement('li');
-const button = document.createElement('button');
-li.className = 'item_1';
-li.innerHTML = "asdas";
-
-
-button.className = 'button_remove';
-button.innerHTML = 'remove';
- 
-li.appendChild(button);
-
-
-bookList.appendChild(li)
-
-
-
-  })
-  
-  
-  
-  
+});
