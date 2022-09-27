@@ -17,7 +17,7 @@ To get a local copy up and running follow these simple example steps.
 To get a local copy up and running follow these simple example steps.
 
 ### Prerequisites
-    Web Browser (e.g. Firefox, Chrome, Edge)
+    Web Browser (Chrome)
 
 ### Setup
     -using git command line
@@ -42,12 +42,17 @@ To get a local copy up and running follow these simple example steps.
 
 👤 **Lucca Micale**
 
-- GitHub: [@luccamicale]()
+- GitHub: [@luccamicale](https://github.com/luccamicale)
 
 👤 **Jose Romero**
 
-- GitHub: [@]()
+- GitHub: [@J2ZROMERO](https://github.com/J2ZROMERO/
+)
 
+👤 **Duncan Njau**
+
+- GitHub: [@Duncannjau](https://github.com/Duncannjau
+)
 
 
 ## 🤝 Contributing
