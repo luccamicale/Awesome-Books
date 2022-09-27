@@ -4,15 +4,13 @@ const title = document.querySelector('#title');
 const author = document.querySelector('#author');
 const form = document.querySelector('#form');
 
-
- class Book {
+class Book {
   static complete_data =[]; // variable to save on  local store
 
   constructor(title,author){
    this.title = title;
   this.author = author;
 }
-
 
 /* set data on local storage */
  book_autor(){
@@ -23,34 +21,28 @@ const form = document.querySelector('#form');
   localStorage.setItem("Books-list", JSON.stringify(Book.complete_data));
 }
 
- 
 /* function add book on html */
  addBooks() {
   const bookStore = `<div class = "book">
+  <div class="dates">
   <h2> ${this.title}</h2> 
   <p class="by">by</p>
-  <h2> ${this.author}</h2>
+  <h2> ${this.author}</h2> </div>
   <button class="remove" type="button">Remove</button>
-  <hr>
   </div>`;
   bookList.innerHTML += bookStore;
   this.book_autor();
   return bookList.innerHTML;
-
-
 }
 
-/*remove book from list html */
+/* remove book from list html */
 removeEvent(parameter){
-  
   if (parameter.target.classList.contains('remove')) {
     document.querySelector('.book-list').removeChild(parameter.target.parentElement);
-    const parent = parameter.target.parentElement;
-    
+    const parent = parameter.target.parentElement; 
   }
 }
 }
-
 
 // local storage. every time you press any key.
 let localForm = { title: '', author: '' };
@@ -77,10 +69,8 @@ title.value = '';
   }
 });
 
-
-
 // remove
 const newBook = new Book(title.value , author.value);
-bookList.addEventListener('click', (x)=>{
-  newBook.removeEvent(x)
+bookList.addEventListener('click', (x) => {
+  newBook.removeEvent(x);
 });
