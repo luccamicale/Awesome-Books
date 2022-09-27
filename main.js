@@ -20,7 +20,7 @@ function addBooks(newBook) {
   bookList.innerHTML += bookStore;
   return bookList.innerHTML;
 }
-// local storage section
+// local storage
 let localForm = { title: '', author: '' };
 if (localStorage.localForm) {
   localForm = JSON.parse(localStorage.localForm);
@@ -32,7 +32,7 @@ form.addEventListener('input', () => {
   localForm.title = title.value;
   localForm.author = author.value;
 });
-
+// add section
 addBook.addEventListener('click', (e) => {
   if (title.value === '' || author.value === '') {
     e.preventDefault();
@@ -43,7 +43,7 @@ addBook.addEventListener('click', (e) => {
     author.value = '';
   }
 });
-// remove books section
+// remove
 bookList.addEventListener('click', (eve) => {
   if (eve.target.classList.contains('remove')) {
     document.querySelector('.book-list').removeChild(eve.target.parentElement);
