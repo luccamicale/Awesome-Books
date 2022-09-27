@@ -1,34 +1,34 @@
-![](https://img.shields.io/badge/Microverse-blueviolet)
 
-# Project Name
+# Awesome books: plain JavaScript with objects
 
-> Description the project.
+> In this project, you will build a basic website that allows users to add/remove books from a list. You will achieve that by using JavaScript objects and arrays. You will also need to dynamically modify the DOM and add basic events.
+
 
 
 ## Built With
-
-- Major languages
-- Frameworks
-- Technologies used
-
-## Live Demo (if available)
-
-[Live Demo Link](https://livedemo.com)
-
+- Major languages (HTML, CSS , JavaScript)
 
 ## Getting Started
+To get a local copy up and running follow these simple example steps.
 
-**This is an example of how you may give instructions on setting up your project locally.**
-**Modify this file to match your project, remove sections that don't apply. For example: delete the testing section if the currect project doesn't require testing.**
+**This is the Awesome books: plain JavaScript with objects**
 
 
 To get a local copy up and running follow these simple example steps.
 
 ### Prerequisites
+    Web Browser (Chrome)
 
 ### Setup
+    -using git command line
+      if you are using the git command line, please use this command in your terminal
+        git clone https://
+    -using the GitHub Desktop
+      if you are using the desktop version of github, please  click on the green "code" button and click on "Open with GitHub Desktop" 
+
 
 ### Install
+    Install the linters in your local environment to mantain your code clean 
 
 ### Usage
 
@@ -40,17 +40,20 @@ To get a local copy up and running follow these simple example steps.
 
 ## Authors
 
-👤 **Author1**
+👤 **Lucca Micale**
 
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
+- GitHub: [@luccamicale](https://github.com/luccamicale)
 
-👤 **Author2**
+👤 **Jose Romero**
 
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
+- GitHub: [@J2ZROMERO](https://github.com/J2ZROMERO/
+)
+
+👤 **Duncan Njau**
+
+- GitHub: [@Duncannjau](https://github.com/Duncannjau
+)
+
 
 ## 🤝 Contributing
 
@@ -63,13 +66,7 @@ Feel free to check the [issues page](../../issues/).
 Give a ⭐️ if you like this project!
 
 ## Acknowledgments
+Microverse Community
 
-- Hat tip to anyone whose code was used
-- Inspiration
-- etc
 
-## 📝 License
 
-This project is [MIT](./LICENSE) licensed.
-
-_NOTE: we recommend using the [MIT license](https://choosealicense.com/licenses/mit/) - you can set it up quickly by [using templates available on GitHub](https://docs.github.com/en/communities/setting-up-your-project-for-healthy-contributions/adding-a-license-to-a-repository). You can also use [any other license](https://choosealicense.com/licenses/) if you wish._
