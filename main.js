@@ -5,43 +5,43 @@ const author = document.querySelector('#author');
 const form = document.querySelector('#form');
 
 class Book {
-  static complete_data =[]; // variable to save on  local store
+  static completeData =[]; // variable to save on  local store
 
-  constructor(title,author){
-   this.title = title;
-  this.author = author;
-}
+  constructor(title, author) {
+    this.title = title;
+    this.author = author;
+  }
 
-/* set data on local storage */
- book_autor(){
-  this.data =  new Object; 
-  this.data.title = this.title;
-  this.data.author = this.author
-  Book.complete_data.push(this.title,this.author)  
-  localStorage.setItem("Books-list", JSON.stringify(Book.complete_data));
-}
+  /* set data on local storage */
+  bookAutor() {
+    this.data = new Object();
+    this.data.title = this.title;
+    this.data.author = this.author;
+    Book.completeData.push(this.title, this.author);
+    localStorage.setItem("Books-list", JSON.stringify(Book.completeData));
+  }
 
-/* function add book on html */
- addBooks() {
-  const bookStore = `<div class = "book">
+  /* function add book on html */
+  addBooks() {
+    const bookStore = `<div class = "book">
   <div class="dates">
   <h2> ${this.title}</h2> 
   <p class="by">by</p>
   <h2> ${this.author}</h2> </div>
   <button class="remove" type="button">Remove</button>
   </div>`;
-  bookList.innerHTML += bookStore;
-  this.book_autor();
-  return bookList.innerHTML;
-}
-
-/* remove book from list html */
-removeEvent(parameter){
-  if (parameter.target.classList.contains('remove')) {
-    document.querySelector('.book-list').removeChild(parameter.target.parentElement);
-    const parent = parameter.target.parentElement; 
+    bookList.innerHTML += bookStore;
+    this.bookAutor();
+    return bookList.innerHTML;
   }
-}
+
+  /* remove book from list html */
+  removeEvent(parameter) {
+    if (parameter.target.classList.contains('remove')) {
+      document.querySelector('.book-list').removeChild(parameter.target.parentElement);
+      const parent = parameter.target.parentElement;
+    }
+  }
 }
 
 // local storage. every time you press any key.
@@ -62,15 +62,15 @@ addBook.addEventListener('click', (e) => {
   if (title.value === '' || author.value === '') {
     e.preventDefault();
   } else {
-const newBook = new Book(title.value , author.value);
-newBook.addBooks();
-title.value = '';
+    const newBook = new Book(title.value, author.value);
+    newBook.addBooks();
+    title.value = '';
     author.value = '';
   }
 });
 
 // remove
-const newBook = new Book(title.value , author.value);
+const newBook = new Book(title.value, author.value);
 bookList.addEventListener('click', (x) => {
   newBook.removeEvent(x);
 });
