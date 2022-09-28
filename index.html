@@ -12,8 +12,8 @@
         <div id="nav-links" class="nav-menu">
             <p class="nav-title">Awesome books</p>
             <ul class="ul-links">
-                <li class="nav-link" ><a href="index.html">List</a></li><hr>
-                <li class="nav-link" ><a href="#" onclick="showAddBook();">Add new</a></li><hr>
+                <li class="nav-link nav_list_link" > <a href="#" >List</a></li><hr>
+                <li class="nav-link nav-list_addnew" ><a href="#" onclick="showAddBook();">Add new</a></li><hr>
                 <li class="nav-link" ><a href="#" onclick="showContact();">Contact</a></li> 
             </ul>   
         </div>
@@ -25,14 +25,13 @@
         <div class="booklistsection">
             <h1 class="container-title">All Awesome Books</h1>
             <h3 class="nodata">No Data Found</h3>
-            <ul class="books-item">
-            </ul>
+            <ul id="book-list" class="booklist"></ul>
             <div class="separator"></div>
         </div>
     </div>
     <section id="add-book" class="add-book">
         <h1> All Awesome Books</h1>
-        <ul id="book-list" class="book-list"></ul>
+        
         <form id="form">
             <h3>Add a New Book</h3>
             <input type="text" id="title" placeholder="Title" required><br><br>

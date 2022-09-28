@@ -12,6 +12,22 @@ class Book {
     this.author = author;
   }
 
+
+  storeTag (){
+   
+   
+    const bookStore = `<div class = "book">
+    <div class="dates">
+    <h2 class="title"> ${this.title}</h2> 
+    <p class="by">by</p>
+    <h2 class ="author"> ${this.author}</h2> </div>
+    <button class="remove" type="button">Remove</button>
+    </div>`;
+    
+    Book.completeData.push(bookStore);  
+    console.log(Book.completeData)
+  }
+
   /* set data on local storage */
   bookAutor() {
     this.data = {};
@@ -37,8 +53,9 @@ class Book {
 
   /* remove book from list html */
   static removeEvent(parameter) {
+    
     if (parameter.target.classList.contains('remove')) {
-      document.querySelector('.book-list').removeChild(parameter.target.parentElement);
+      document.querySelector('.booklist').removeChild(parameter.target.parentElement);
     }
   }
 }
@@ -62,7 +79,8 @@ addBook.addEventListener('click', (e) => {
     e.preventDefault();
   } else {
     const newBook = new Book(title.value, author.value);
-    newBook.addBooks();
+   // newBook.addBooks();
+    newBook.storeTag();
     title.value = '';
     author.value = '';
   }
@@ -70,11 +88,65 @@ addBook.addEventListener('click', (e) => {
 
 // remove
 
-bookList.addEventListener('click', (x) => {
-  Book.removeEvent(x);
-});
+
+
+
+/***/
+
+document.querySelector('.nav_list_link').addEventListener('click',()=>{
+  document.getElementById('contact').style.display = 'none';
+  document.getElementById('list-book').style.display = 'block';
+  document.getElementById('add-book').style.display = 'none';
+  
+  let nodata = document.querySelector('.nodata');
+  
+  if(Book.completeData.length >= 0){
+    nodata.style.display = 'none';
+  }
+  
+
+  const datosB =  Book.completeData
+  Book.completeData.forEach((actual,position,datosB) =>{
+     bookList.innerHTML += datosB[position]
+ 
+    
+    })  
+   
+  })
+ 
+  
+  
+  bookList.addEventListener('click', (x) => {
+
+    Book.removeEvent(x);
+   
+    // let nodata = document.querySelector('.nodata');
+    // if(Book.completeData.length < 0){
+    //   nodata.style.display = 'block';
+    // }
+  
+  })
+  
+/** */
 
 // show and remove the section
+
+
+
+document.querySelector('.nav-list_addnew').addEventListener('click', ()=>{
+  let booklist =  document.querySelector('.booklist');
+
+
+
+let datosP = [];
+  for(let i = 0; i < bookList.childElementCount ; i++){
+datosP.push(bookList[i])
+  }
+Book.completeData = [];
+Book.completeData.push(datosP);
+  
+})
+
 
 function showAddBook() {
   document.getElementById('add-book').style.display = 'flex';
@@ -88,3 +160,8 @@ function showContact() {
   document.getElementById('add-book').style.display = 'none';
 }
   
+// function showList() {
+//   document.getElementById('contact').style.display = 'none';
+//   document.getElementById('list-book').style.display = 'flex';
+//   document.getElementById('add-book').style.display = 'none';
+// }
