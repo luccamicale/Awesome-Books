@@ -73,3 +73,18 @@ addBook.addEventListener('click', (e) => {
 bookList.addEventListener('click', (x) => {
   Book.removeEvent(x);
 });
+
+// show and remove the section
+
+function showAddBook() {
+  document.getElementById('add-book').style.display = 'flex';
+  document.getElementById('list-book').style.display = 'none';
+  document.getElementById('contact').style.display = 'none';
+}
+  
+function showContact() {
+  document.getElementById('contact').style.display = 'flex';
+  document.getElementById('list-book').style.display = 'none';
+  document.getElementById('add-book').style.display = 'none';
+}
+  
