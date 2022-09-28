@@ -3,24 +3,47 @@ const bookList = document.querySelector('#book-list');
 const title = document.querySelector('#title');
 const author = document.querySelector('#author');
 const form = document.querySelector('#form');
-const Book = function objBook(title, author) {
-  this.title = title;
-  this.author = author;
-};
 
-const storedBooks = [];
-function addBooks(newBook) {
-  const bookStore = `<div class = "book">
-  <h2> ${newBook.title}</h2> 
+class Book {
+  static completeData =[]; // variable to save on  local store
+
+  constructor(title, author) {
+    this.title = title;
+    this.author = author;
+  }
+
+  /* set data on local storage */
+  bookAutor() {
+    this.data = {};
+    this.data.title = this.title;
+    this.data.author = this.author;
+    Book.completeData.push(this.title, this.author);
+    localStorage.setItem('Books-list', JSON.stringify(Book.completeData));
+  }
+
+  /* function add book on html */
+  addBooks() {
+    const bookStore = `<div class = "book">
+  <div class="dates">
+  <h2> ${this.title}</h2> 
   <p class="by">by</p>
-  <h2> ${newBook.author}</h2>
+  <h2> ${this.author}</h2> </div>
   <button class="remove" type="button">Remove</button>
-  <hr>
   </div>`;
-  bookList.innerHTML += bookStore;
-  return bookList.innerHTML;
+    bookList.innerHTML += bookStore;
+    this.bookAutor();
+    return bookList.innerHTML;
+  }
+
+  /* remove book from list html */
+  static removeEvent(parameter) {
+    if (parameter.target.classList.contains('remove')) {
+      document.querySelector('.book-list').removeChild(parameter.target.parentElement);
+    }
+  }
 }
-// local storage
+
+// local storage. every time you press any key.
 let localForm = { title: '', author: '' };
 if (localStorage.localForm) {
   localForm = JSON.parse(localStorage.localForm);
@@ -32,23 +55,21 @@ form.addEventListener('input', () => {
   localForm.title = title.value;
   localForm.author = author.value;
 });
-// add section
+
+// add book
 addBook.addEventListener('click', (e) => {
   if (title.value === '' || author.value === '') {
     e.preventDefault();
   } else {
     const newBook = new Book(title.value, author.value);
-    addBooks(newBook);
+    newBook.addBooks();
     title.value = '';
     author.value = '';
   }
 });
+
 // remove
-bookList.addEventListener('click', (eve) => {
-  if (eve.target.classList.contains('remove')) {
-    document.querySelector('.book-list').removeChild(eve.target.parentElement);
-    const parent = eve.target.parentElement;
-    const removeBook = storedBooks.find((item) => item.title === parent.firstChild.innerText);
-    storedBooks.splice(storedBooks.indexOf(removeBook), 1);
-  }
+
+bookList.addEventListener('click', (x) => {
+  Book.removeEvent(x);
 });
