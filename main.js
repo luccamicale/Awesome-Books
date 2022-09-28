@@ -14,11 +14,11 @@ class Book {
 
   /* set data on local storage */
   bookAutor() {
-    this.data = new Object();
+    this.data = {};
     this.data.title = this.title;
     this.data.author = this.author;
     Book.completeData.push(this.title, this.author);
-    localStorage.setItem("Books-list", JSON.stringify(Book.completeData));
+    localStorage.setItem('Books-list', JSON.stringify(Book.completeData));
   }
 
   /* function add book on html */
@@ -36,10 +36,9 @@ class Book {
   }
 
   /* remove book from list html */
-  removeEvent(parameter) {
+  static removeEvent(parameter) {
     if (parameter.target.classList.contains('remove')) {
       document.querySelector('.book-list').removeChild(parameter.target.parentElement);
-      const parent = parameter.target.parentElement;
     }
   }
 }
@@ -70,7 +69,7 @@ addBook.addEventListener('click', (e) => {
 });
 
 // remove
-const newBook = new Book(title.value, author.value);
+
 bookList.addEventListener('click', (x) => {
-  newBook.removeEvent(x);
+  Book.removeEvent(x);
 });
