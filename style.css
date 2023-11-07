@@ -1,6 +1,10 @@
 body {
   padding: 12px;
   font-family: 'Poppins', sans-serif;
+  background-image: url('./img/10libros.jpeg');
+  background-size: cover; /* Ajusta el tamaño de la imagen para que cubra el fondo */
+  background-repeat: no-repeat; /* Evita que se repita la imagen */
+  background-attachment: fixed; /* Fija la imagen en el fondo */
 }
 
 .add-book {
@@ -28,11 +32,19 @@ h2 {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  border: 0.1px solid;
+  border: 3px solid;
+  background-color: #d4a373;
 }
 
 #btn-add {
-  margin-left: 135px;
+  margin-left: 6%;
+  border-radius: 16px;
+  width: auto;
+  height: auto;
+  padding: 15px;
+  box-shadow: 5px 5px 5px 5px;
+  background-color: palegreen;
+  font-size: 20px;
 }
 
 .remove {
@@ -63,10 +75,13 @@ a {
 
 .container-title {
   text-align: center;
+  color: cornsilk;
+  font-size: 45px;
 }
 
 .nodata {
   text-align: center;
+  color: #d4a373;
 }
 
 .nav-menu {
@@ -76,6 +91,7 @@ a {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  background-color: bisque;
 }
 
 .nav-link {
@@ -85,7 +101,7 @@ a {
 
 .nav-title {
   margin-left: 10px;
-  font-size: 20px;
+  font-size: 30px;
 }
 
 .nav-link:hover {
@@ -109,28 +125,37 @@ a {
 .date {
   text-align: right;
   margin-top: 15px;
+  font-size: 18px;
+  color: white;
 }
 
 .title {
   text-align: center;
+  font-size: 28px;
+  color: white;
 
   /* font-size: 25px; */
 }
 
 .text {
   text-align: center;
-  font-size: 18px;
+  font-size: 22px;
+  color: white;
 }
 
 .info {
   text-align: start;
   margin-top: 60px;
   margin-left: 100px;
+  font-size: 27px;
+  color: white;
+  padding-top: 15px;
 }
 
 .footer {
   border: 2px solid;
-  margin-top: 20%;
+  margin-top: 575px;
+  background-color: bisque;
 }
 
 .text-footer {
@@ -147,6 +172,7 @@ a {
   flex-direction: column;
   text-align: center;
   justify-content: center;
+  font-size: 28px;
 }
 
 .ul-links {
@@ -155,4 +181,39 @@ a {
   margin-right: 35px;
   list-style-type: none;
   width: 27%;
+  font-size: 22px;
+}
+
+.input-one {
+  border-radius: 16px;
+  width: 550px;
+  height: 20px;
+  padding: 15px;
+  box-shadow: 5px 5px 5px 5px;
+  font-size: 20px;
+}
+
+.input-two {
+  border-radius: 16px;
+  width: 550px;
+  height: 20px;
+  padding: 15px;
+  box-shadow: 5px 5px 5px 5px;
+  font-size: 20px;
+}
+
+.book.even {
+  background-color: #f2f2f2; /* Color de fondo para libros con índice par */
+}
+
+.book.odd {
+  background-color: #e0e0e0; /* Color de fondo para libros con índice impar */
+}
+
+.all-awesone {
+  color: #fff;
+}
+
+.add-awesone {
+  color: #fff;
 }

@@ -35,13 +35,14 @@ class Book {
 
   /* function add book on html */
   addBooks() {
-    const bookStore = `<div class = "book">
-  <div class="dates">
-  <h2> ${this.title}</h2> 
-  <p class="by">by</p>
-  <h2> ${this.author}</h2> </div>
-  <button class="remove" type="button">Remove</button>
-  </div>`;
+    const bookStore = `<div class="book ${Book.completeData.length % 2 === 0 ? 'even' : 'odd'}">
+      <div class="dates">
+        <h2> ${this.title}</h2>
+        <p class="by">by</p>
+        <h2> ${this.author}</h2>
+      </div>
+      <button class="remove" type="button">Remove</button>
+    </div>`;
     bookList.innerHTML += bookStore;
     this.bookAutor();
     return bookList.innerHTML;
