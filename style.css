@@ -24,7 +24,12 @@ h2 {
 }
 
 .by {
-  font-size: 0.9em;
+  text-align: center;
+  font-size: 22px;
+  color: white;
+  font-family: cursive;
+
+  /* font-size: 25px; */
 }
 
 .book {
@@ -48,9 +53,11 @@ h2 {
 }
 
 .remove {
-  width: 72px;
-  height: 21px;
+  width: 82px;
+  height: 28px;
   margin-right: 10px;
+  background-color: antiquewhite;
+  border-radius: 16px;
 }
 
 a {
@@ -77,6 +84,7 @@ a {
   text-align: center;
   color: cornsilk;
   font-size: 45px;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
 .nodata {
@@ -92,6 +100,8 @@ a {
   justify-content: space-between;
   align-items: center;
   background-color: bisque;
+  border-radius: 16px;
+  height: 45px;
 }
 
 .nav-link {
@@ -102,6 +112,7 @@ a {
 .nav-title {
   margin-left: 10px;
   font-size: 30px;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
 .nav-link:hover {
@@ -133,6 +144,7 @@ a {
   text-align: center;
   font-size: 28px;
   color: white;
+  font-family: cursive;
 
   /* font-size: 25px; */
 }
@@ -154,8 +166,11 @@ a {
 
 .footer {
   border: 2px solid;
-  margin-top: 575px;
+  margin-top: 615px;
   background-color: bisque;
+  border-radius: 6px;
+  height: 45px;
+  box-shadow: 5px 5px 5px 5px;
 }
 
 .text-footer {
@@ -182,6 +197,7 @@ a {
   list-style-type: none;
   width: 27%;
   font-size: 22px;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
 .input-one {
@@ -217,3 +233,13 @@ a {
 .add-awesone {
   color: #fff;
 }
+
+.author {
+  text-align: center;
+  font-size: 28px;
+  color: white;
+  font-family: cursive;
+
+  /* font-size: 25px; */
+}
+
